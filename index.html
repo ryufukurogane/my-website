@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ryufu Kurogane — Founder of Ryunax</title>
+    <meta
+      name="description"
+      content="Portfolio of Ryufu Kurogane (黒金 龍風), founder of Ryunax. Where Japanese tradition meets the future."
+    />
+    <meta name="theme-color" content="#0b0b0d" />
+    <meta property="og:title" content="Ryufu Kurogane — 黒金 龍風" />
+    <meta
+      property="og:description"
+      content="Founder of Ryunax. Tradition meets future."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%23d6342c'/%3E%3Ctext x='50' y='72' font-size='64' text-anchor='middle' fill='%23f3ecdd' font-family='serif'%3E龍%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;600;800&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============ LOADER ============ -->
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader-kanji">龍</div>
+      <div class="loader-bar"><span id="loaderBar"></span></div>
+      <p class="loader-text">RYUNAX</p>
+    </div>
+
+    <div class="progress" id="progress" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+    <canvas id="sakura" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="header">
+      <a href="#home" class="brand" aria-label="Ryufu Kurogane — home">
+        <span class="hanko">龍</span>
+        <span class="brand-text">Ryufu<br /><small>黒金 龍風</small></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="#home"><i>始</i><span data-ja="ホーム">Home</span></a>
+        <a href="#about"><i>序</i><span data-ja="紹介">About</span></a>
+        <a href="#ryunax"><i>龍</i><span>Ryunax</span></a>
+        <a href="#journey"><i>道</i><span data-ja="軌跡">Journey</span></a>
+        <a href="#values"><i>心</i><span data-ja="信条">Values</span></a>
+        <a href="#hobbies"><i>好</i><span data-ja="趣味">Hobbies</span></a>
+        <a href="#work"><i>作</i><span data-ja="事業">Work</span></a>
+        <a href="#contact"><i>縁</i><span data-ja="連絡">Contact</span></a>
+      </nav>
+
+      <div class="controls">
+        <button
+          class="ctl"
+          id="langBtn"
+          aria-label="Switch language"
+          title="English / 日本語"
+        >
+          EN / 日
+        </button>
+        <button
+          class="ctl"
+          id="themeBtn"
+          aria-label="Toggle Night and Day theme"
+          title="夜 / 昼"
+        >
+          <span id="themeIcon">☾</span>
+        </button>
+        <button
+          class="burger"
+          id="burger"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="home">
+        <svg class="enso" viewBox="0 0 400 400" aria-hidden="true">
+          <path
+            d="M200 40 C 310 38, 372 130, 360 215 C 348 305, 270 365, 190 360 C 105 355, 40 290, 42 200 C 44 125, 95 70, 160 52"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="14"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <div class="vertical-name" aria-hidden="true">黒金龍風</div>
+
+        <div class="hero-inner">
+          <p class="eyebrow reveal">
+            <span class="line"></span
+            ><span data-ja="創業者 ・ Ryunax">Founder · Ryunax</span>
+          </p>
+          <h1 class="hero-title reveal">
+            <span class="t-first">Ryufu</span>
+            <span class="t-last">Kurogane</span>
+          </h1>
+          <p class="hero-ja reveal">黒金 龍風 <em>くろがね りゅうふう</em></p>
+          <p
+            class="hero-sub reveal"
+            data-ja="Ryunax創業者。古き道の規律で、未来を鍛える。"
+          >
+            Founder of Ryunax. Forging the future with the discipline of the old
+            way.
+          </p>
+          <div class="cta-row reveal">
+            <a href="#ryunax" class="btn btn-primary"
+              ><span data-ja="Ryunaxを見る">Explore Ryunax</span><b>→</b></a
+            >
+            <a href="#contact" class="btn btn-ghost"
+              ><span data-ja="お問い合わせ">Get in touch</span></a
+            >
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <svg class="torii" viewBox="0 0 240 240">
+            <g
+              fill="none"
+              stroke="currentColor"
+              stroke-width="8"
+              stroke-linecap="round"
+            >
+              <path d="M20 52 Q120 30 220 52" />
+              <path d="M34 82 H206" />
+              <path d="M62 52 V220 M178 52 V220" />
+              <path d="M120 82 V52" />
+            </g>
+          </svg>
+          <div class="sun"></div>
+        </div>
+
+        <a href="#about" class="scroll-cue" aria-label="Scroll down"
+          ><span></span><small data-ja="スクロール">SCROLL</small></a
+        >
+      </section>
+
+      <!-- ============ MARQUEE ============ -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>RYUNAX</span><span>龍</span><span>CRAFT</span><span>技</span
+          ><span>FUTURE</span><span>未来</span><span>HONOR</span><span>誠</span>
+          <span>RYUNAX</span><span>龍</span><span>CRAFT</span><span>技</span
+          ><span>FUTURE</span><span>未来</span><span>HONOR</span><span>誠</span>
+        </div>
+      </div>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about">
+        <div class="wrap about-grid">
+          <div class="portrait reveal">
+            <div class="portrait-frame">
+              <img src="tojipfp.jpg" alt="Ryufu Kurogane" />
+            </div>
+            <span class="portrait-seal">黒金</span>
+            <div class="corner c1"></div>
+            <div class="corner c2"></div>
+          </div>
+
+          <div class="about-text">
+            <p class="kicker reveal">
+              <b>序</b> <span data-ja="紹介">About</span>
+            </p>
+            <h2 class="h2 reveal" data-ja="名刀のように、会社を鍛える。">
+              A company, forged like a blade.
+            </h2>
+            <p
+              class="reveal"
+              data-ja="黒金龍風。Ryunax創業者。優れた会社は名刀のように、幾千回と折り返され、忍耐と精度と誠実さによって鍛えられると信じています。"
+            >
+              I'm Ryufu Kurogane, founder of Ryunax. I believe great companies
+              are built like great blades: folded thousands of times, with
+              patience, precision and honesty.
+            </p>
+            <p
+              class="reveal"
+              data-ja="「黒金」は黒い鉄、「龍風」は龍の風を意味します。伝統の重みと、未来へ吹く風。その二つを一つの事業に宿しています。"
+            >
+              My name means "dragon wind", the weight of tradition and the wind
+              toward the future. I carry this into everything I build.
+            </p>
+
+            <div class="stats reveal">
+              <div>
+                <strong data-count="1">0</strong
+                ><span data-ja="事業">Venture</span>
+              </div>
+              <div>
+                <strong data-count="3">0</strong
+                ><span data-ja="柱">Pillars</span>
+              </div>
+              <div>
+                <strong data-count="7">0</strong
+                ><span data-ja="徳">Virtues</span>
+              </div>
+              <div><strong>∞</strong><span data-ja="探求">Craft</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ RYUNAX ============ -->
+      <section class="section section-alt seigaiha" id="ryunax">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker reveal"><b>龍</b> Ryunax · リュナックス</p>
+            <h2 class="h2 reveal" data-ja="伝統の精神、未来のテクノロジー。">
+              Ancient spirit. Future technology.
+            </h2>
+            <p
+              class="lead reveal"
+              data-ja="Ryunaxは、龍(Ryu)と結節点(Nexus)から生まれた名前です。職人の精神でテクノロジーに向き合う、新しいスタートアップです。"
+            >
+              Ryunax joins Ryu (龍, dragon) and Nexus: the point where things
+              connect. A new startup that approaches technology with a
+              craftsman's spirit.
+            </p>
+          </div>
+
+          <div class="pillars">
+            <article class="card tilt reveal">
+              <span class="card-kanji">技</span>
+              <h3>Gi · <span data-ja="技 / クラフト">Craft</span></h3>
+              <p
+                data-ja="細部まで妥協しない。製品は職人が鍛える作品のように、一つひとつ丁寧に仕上げます。"
+              >
+                No compromise on detail. Every product is finished with the care
+                of a handmade work.
+              </p>
+            </article>
+            <article class="card tilt reveal">
+              <span class="card-kanji">革</span>
+              <h3>Kaku · <span data-ja="革 / 革新">Innovation</span></h3>
+              <p
+                data-ja="古い常識を疑い、新しい道を拓く。伝統を知るからこそ、大胆に変えられます。"
+              >
+                Question old assumptions and open new paths. Knowing tradition
+                lets us change boldly.
+              </p>
+            </article>
+            <article class="card tilt reveal">
+              <span class="card-kanji">絆</span>
+              <h3>Kizuna · <span data-ja="絆 / つながり">Community</span></h3>
+              <p
+                data-ja="顧客、仲間、社会との信頼の絆。成長は共に歩む人々とともにあります。"
+              >
+                Bonds of trust with customers, teammates and society. Growth
+                belongs to those who walk together.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ JOURNEY ============ -->
+      <section class="section" id="journey">
+        <div class="wrap">
+          <div class="section-head center">
+            <p class="kicker reveal">
+              <b>道</b> <span data-ja="軌跡">Journey</span>
+            </p>
+            <h2 class="h2 reveal" data-ja="四つの章。">
+              Four chapters of the path.
+            </h2>
+          </div>
+
+          <!-- EDIT: replace with real milestones -->
+          <ol class="timeline">
+            <li class="reveal">
+              <span class="t-num">I</span>
+              <h3 data-ja="修行 — 学び">Shugyō · Learning</h3>
+              <p data-ja="基礎を磨き、失敗から学び、自分の道を見つけた時期。">
+                Sharpening the basics, learning from failure, and finding my own
+                direction.
+              </p>
+            </li>
+            <li class="reveal">
+              <span class="t-num">II</span>
+              <h3 data-ja="鍛錬 — 鍛える">Tanren · Forging</h3>
+              <p data-ja="技術と経営を折り返し鍛え、確かな視点を築いた時期。">
+                Folding technology and business again and again until a clear
+                point of view appeared.
+              </p>
+            </li>
+            <li class="reveal">
+              <span class="t-num">III</span>
+              <h3 data-ja="創業 — Ryunax誕生">Sōgyō · Ryunax is born</h3>
+              <p data-ja="志を形にするため、Ryunaxを創業。新しい挑戦の始まり。">
+                Founding Ryunax to turn a vision into something real. The start
+                of a new challenge.
+              </p>
+            </li>
+            <li class="reveal">
+              <span class="t-num">IV</span>
+              <h3 data-ja="未来 — 次の一手">Mirai · The next move</h3>
+              <p data-ja="一歩ずつ、確実に。龍の風に乗って、さらに高みへ。">
+                One step at a time, with certainty. Riding the dragon wind
+                toward greater heights.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ VALUES ============ -->
+      <section class="section section-alt" id="values">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker reveal">
+              <b>心</b> <span data-ja="信条">Values</span>
+            </p>
+            <h2 class="h2 reveal" data-ja="七つの徳が、経営の軸。">
+              Seven virtues guide how we build.
+            </h2>
+            <p
+              class="lead reveal"
+              data-ja="武士道の七徳を、現代のビジネスの言葉に置き換えて。"
+            >
+              The seven virtues of bushido, translated into the language of
+              modern business.
+            </p>
+          </div>
+
+          <div class="values">
+            <div class="v-card tilt reveal">
+              <span class="v-k">義</span>
+              <h4>Gi</h4>
+              <p data-ja="正しさ。利益より筋を通す。">
+                Integrity. Do what is right before what is profitable.
+              </p>
+            </div>
+            <div class="v-card tilt reveal">
+              <span class="v-k">勇</span>
+              <h4>Yū</h4>
+              <p data-ja="勇気。恐れず、一歩を踏み出す。">
+                Courage. Take the step even when it is uncertain.
+              </p>
+            </div>
+            <div class="v-card tilt reveal">
+              <span class="v-k">仁</span>
+              <h4>Jin</h4>
+              <p data-ja="思いやり。人を中心に考える。">
+                Compassion. Put people at the centre of decisions.
+              </p>
+            </div>
+            <div class="v-card tilt reveal">
+              <span class="v-k">礼</span>
+              <h4>Rei</h4>
+              <p data-ja="礼儀。相手への敬意を忘れない。">
+                Respect. Treat every partner and rival with dignity.
+              </p>
+            </div>
+            <div class="v-card tilt reveal">
+              <span class="v-k">誠</span>
+              <h4>Makoto</h4>
+              <p data-ja="誠実。言葉と行動を一致させる。">
+                Honesty. Let words and actions match.
+              </p>
+            </div>
+            <div class="v-card tilt reveal">
+              <span class="v-k">名誉</span>
+              <h4>Meiyo</h4>
+              <p data-ja="名誉。信頼という資産を守る。">
+                Honor. Protect trust, the most valuable asset.
+              </p>
+            </div>
+            <div class="v-card tilt reveal">
+              <span class="v-k">忠義</span>
+              <h4>Chūgi</h4>
+              <p data-ja="忠義。仲間と使命に忠実であること。">
+                Loyalty. Stay faithful to the team and the mission.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ HOBBIES ============ -->
+      <section class="section section-alt" id="hobbies">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker reveal">
+              <b>好</b> <span data-ja="趣味">Hobbies & Interests</span>
+            </p>
+            <h2 class="h2 reveal" data-ja="人生を豊かにするものたち。">
+              The things that keep me curious and inspired.
+            </h2>
+            <p
+              class="lead reveal"
+              data-ja="旅行、学び、そして新しい技術に触れることが、私のエネルギーの源です。"
+            >
+              Traveling, learning, and exploring technology are the things that
+              keep me growing and energized every day.
+            </p>
+          </div>
+
+          <div class="hobby-grid">
+            <article class="hobby-card reveal">
+              <span class="hobby-icon">✈</span>
+              <h3>Traveling</h3>
+              <p>
+                I love discovering new places, experiencing different cultures,
+                and collecting stories that broaden my perspective.
+              </p>
+            </article>
+            <article class="hobby-card reveal">
+              <span class="hobby-icon">💡</span>
+              <h3>Technology</h3>
+              <p>
+                I am deeply passionate about technology and always eager to
+                learn new tools, trends, and innovations.
+              </p>
+            </article>
+            <article class="hobby-card reveal">
+              <span class="hobby-icon">📚</span>
+              <h3>Learning</h3>
+              <p>
+                Learning new things is one of my biggest strengths. I enjoy
+                self-growth, research, and constant improvement.
+              </p>
+            </article>
+            <article class="hobby-card reveal">
+              <span class="hobby-icon">🎯</span>
+              <h3>Self Development</h3>
+              <p>
+                I believe discipline, curiosity, and consistency are the
+                foundations of meaningful progress in life and work.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WORK ============ -->
+      <section class="section" id="work">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker reveal">
+              <b>作</b> <span data-ja="事業">Work</span>
+            </p>
+            <h2 class="h2 reveal" data-ja="Ryunaxの構想。">
+              The Ryunax vision, in four forms.
+            </h2>
+            <!-- EDIT: concept placeholders. Replace with real products -->
+            <p
+              class="lead reveal"
+              data-ja="現在の構想です。実際の製品情報に置き換えてください。"
+            >
+              Current concepts. Replace with real product information when
+              ready.
+            </p>
+          </div>
+
+          <div class="work-grid">
+            <a href="#contact" class="work-card tilt reveal">
+              <span class="w-idx">01</span>
+              <h3>Ryunax Core</h3>
+              <p data-ja="事業の中核となるプラットフォーム。">
+                The core platform at the heart of the business.
+              </p>
+              <span class="tag">Platform · 基盤</span>
+            </a>
+            <a href="#contact" class="work-card tilt reveal">
+              <span class="w-idx">02</span>
+              <h3>Ryunax Forge</h3>
+              <p data-ja="アイデアを製品へと鍛え上げる開発の場。">
+                Where ideas are hammered into real products.
+              </p>
+              <span class="tag">Build · 鍛造</span>
+            </a>
+            <a href="#contact" class="work-card tilt reveal">
+              <span class="w-idx">03</span>
+              <h3>Ryunax Studio</h3>
+              <p data-ja="デザインと体験を磨くクリエイティブ部門。">
+                The creative arm polishing design and experience.
+              </p>
+              <span class="tag">Design · 意匠</span>
+            </a>
+            <a href="#contact" class="work-card tilt reveal">
+              <span class="w-idx">04</span>
+              <h3>Ryunax Labs</h3>
+              <p data-ja="未来の可能性を試す実験と研究。">
+                Experiments and research testing future possibilities.
+              </p>
+              <span class="tag">Research · 研究</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ QUOTE ============ -->
+      <section class="quote-band seigaiha">
+        <blockquote class="reveal">
+          <p data-ja="「千日の稽古を鍛とし、万日の稽古を錬とす。」">
+            "A thousand days of practice to forge, ten thousand to refine."
+          </p>
+          <cite
+            >—
+            <span data-ja="宮本武蔵(伝)"
+              >Attributed to Miyamoto Musashi</span
+            ></cite
+          >
+        </blockquote>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="section" id="contact">
+        <div class="wrap contact-grid">
+          <div class="contact-copy">
+            <p class="kicker reveal">
+              <b>縁</b> <span data-ja="連絡">Contact</span>
+            </p>
+            <h2 class="h2 reveal" data-ja="ご縁を、大切に。">
+              Every great thing begins with a connection.
+            </h2>
+            <p
+              class="reveal"
+              data-ja="提携、取材、ご相談など、お気軽にご連絡ください。"
+            >
+              Partnerships, press, or a simple hello. Reach out and I will reply
+              personally.
+            </p>
+
+            <div class="contact-badges reveal">
+              <div class="info-pill">
+                <span class="info-label">Email</span>
+                <a href="mailto:hello@ryunax.example">ryufukurogane@gmail.com</a>
+              </div>
+              <div class="info-pill">
+                <span class="info-label">Location</span>
+                <span>Kyoto, Japan</span>
+              </div>
+              <div class="info-pill">
+                <span class="info-label">Available</span>
+                <span>Open for projects</span>
+              </div>
+            </div>
+
+            <ul class="socials reveal">
+              <li class="social-item">
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <span class="social-icon" aria-hidden="true">in</span>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li class="social-item">
+                <a
+                  href="https://x.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="X / Twitter"
+                >
+                  <span class="social-icon" aria-hidden="true">X</span>
+                  <span>X</span>
+                </a>
+              </li>
+              <li class="social-item">
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                >
+                  <span class="social-icon" aria-hidden="true">GH</span>
+                  <span>GitHub</span>
+                </a>
+              </li>
+              <li class="social-item">
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                >
+                  <span class="social-icon" aria-hidden="true">◎</span>
+                  <span>Instagram</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <form class="form reveal" id="contactForm" novalidate>
+            <label
+              ><span data-ja="お名前">Name</span>
+              <input
+                type="text"
+                name="name"
+                required
+                autocomplete="name"
+                data-ja-placeholder="山田 太郎"
+                placeholder="Your name"
+              />
+            </label>
+            <label
+              ><span data-ja="メール">Email</span>
+              <input
+                type="email"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="you@example.com"
+              />
+            </label>
+            <label
+              ><span data-ja="メッセージ">Message</span>
+              <textarea
+                name="message"
+                rows="5"
+                required
+                data-ja-placeholder="メッセージをご記入ください"
+                placeholder="Tell me about your idea"
+              ></textarea>
+            </label>
+            <p
+              class="form-msg"
+              id="formMsg"
+              role="status"
+              aria-live="polite"
+            ></p>
+            <button type="submit" class="btn btn-primary">
+              <span data-ja="送信する">Send message</span><b>→</b>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <span class="hanko">龍</span>
+      <p>© <span id="year">2026-∞</span> Ryufu Kurogane · 黒金 龍風 — Ryunax</p>
+      <a href="#home" class="to-top" aria-label="Back to top">↑</a>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
